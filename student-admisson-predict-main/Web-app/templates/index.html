@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capstone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="icon" href="../static/icon.png" type="image/png">
+</head>
+<body>
+
+<!-- Navigasi -->
+<nav class="nav">
+    <div class="navbar-left">
+        <img src="../static/IBM.png"/> 
+    </div>
+    <div class="navbar-right">
+        <img src="../static/IL.png"> 
+    </div>
+</nav>
+
+<!--Bagian Input-->
+<div class="container">
+    <h1>Student Admission Prediction</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="nama_sekolah">Nama Sekolah:</label>
+            <input type="text" id="nama_sekolah" name="nama_sekolah">
+        </div>
+
+        <div class="form-group">
+            <label for="npsn">NPSN:</label>
+            <input type="text" id="npsn" name="npsn">
+        </div>
+
+        <div class="form-group">
+            <label for="jenjang">Jenjang:</label>
+            <input type="text" id="jenjang" name="jenjang">
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status">
+        </div>
+
+        <div class="form-group">
+            <label for="guru">Guru:</label>
+            <input type="text" id="guru" name="guru">
+        </div>
+
+        <div class="form-group">
+            <label for="pegawai">Pegawai:</label>
+            <input type="text" id="pegawai" name="pegawai">
+        </div>
+
+        <div class="form-group">
+            <label for="r_kelas">Jumlah Kelas:</label>
+            <input type="text" id="r_kelas" name="r_kelas">
+        </div>
+
+        <div class="form-group">
+            <label for="r_lab">Jumlah Laboratorium:</label>
+            <input type="text" id="r_lab" name="r_lab">
+        </div>
+
+        <div class="form-group">
+            <label for="r_perpus">Jumlah Perpustakaan:</label>
+            <input type="text" id="r_perpus" name="r_perpus">
+        </div>
+
+        <input type="submit" value="Predict" />
+    </form>
+
+    <!-- Hasil dari mendeploy Machine Learning-->
+    {% if prediction %}
+    <div class="result">
+        <h2>Prediction Result</h2>
+        <p>Jumlah Siswa:
+            <span class="prediction-value">{{ prediction }}</span>
+        </p>
+    </div>
+    {% endif %}
+</div>
+
+<!--Bagian Footer -->
+<footer class="footer">
+    <a href="https://github.com/vivoveryart/Capstonevivo.github.io">
+        <img src="../static/GitHub-Logo.png"/>
+    </a>
+</footer>
+</body>
+</html>
